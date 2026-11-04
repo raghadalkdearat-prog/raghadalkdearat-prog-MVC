@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Student Services";
+}
+
+<div class="container mt-5">
+
+    <h1>University Student Portal</h1>
+
+    <p>Welcome to the Student Services Portal.</p>
+
+    <hr />
+
+    <h3>1. Registration Information</h3>
+
+    <p>View the current semester registration status.</p>
+
+    <a asp-controller="StudentServices"
+       asp-action="RegistrationInfo"
+       class="btn btn-primary">
+        View Registration Info
+    </a>
+
+    <hr />
+
+    <h3>2. Submit Student Request</h3>
+
+    <p>Submit a request to the student services office.</p>
+
+    <form asp-controller="StudentServices"
+          asp-action="SubmitRequest"
+          method="post">
+
+        <button type="submit" class="btn btn-success">
+            Submit Request
+        </button>
+
+    </form>
+
+    <hr />
+
+    <h3>3. Student Services</h3>
+
+    <p>Go to the registration information service.</p>
+
+    <a asp-controller="StudentServices"
+       asp-action="StudentServices"
+       class="btn btn-warning">
+        Go to Student Services
+    </a>
+
+    <hr />
+
+    <h3>4. University Website</h3>
+
+    <p>Visit the official university website.</p>
+
+    <a asp-controller="StudentServices"
+       asp-action="UniversityWebsite"
+       class="btn btn-secondary">
+        Visit University Website
+    </a>
+
+</div>
