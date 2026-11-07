@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Our Suppliers";
+}
+
+<div class="container mt-5">
+
+    <h2>@ViewBag.Title</h2>
+    <p>University Cafeteria Suppliers</p>
+
+    <div class="card p-3 mt-4 mb-4">
+        <h5>Total Suppliers</h5>
+        <h3>@ViewBag.NumofSuppliers</h3>
+    </div>
+
+    <h4>Suppliers List</h4>
+
+    <div class="row mt-3">
+
+        @foreach (string supplier in ViewBag.suppliers)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card p-3">
+                    <h5>@supplier</h5>
+                </div>
+            </div>
+        }
+
+    </div>
+
+</div>

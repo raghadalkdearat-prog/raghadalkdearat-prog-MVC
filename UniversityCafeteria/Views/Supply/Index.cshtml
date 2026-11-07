@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Supply Management";
+}
+
+<div class="container mt-5">
+
+    <h1>University Cafeteria</h1>
+
+    <p class="text-muted">
+        Welcome to the Supply Management System.
+    </p>
+
+    <hr />
+
+    <h3>Product Categories</h3>
+
+    <p>Explore our cafeteria product categories.</p>
+
+    <ul class="list-group mt-3">
+
+        @foreach (string category in ViewBag.Categories)
+        {
+            <li class="list-group-item">
+                @category
+            </li>
+        }
+
+    </ul>
+
+</div>

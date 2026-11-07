@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_SupplyLayout.cshtml";
+}
+<h1>Your selected Offers</h1>
+@foreach (var offer in ViewBag.SelectedOffers)
+{
+    <h3>@offer.OfferName</h3>
+    <p>Supplier: @offer.SupplierName</p>
+    <p>Quantity: @offer.Quantity</p>
+    <p>Unit Price: @offer.UnitPrice JD</p>
+    <p>Total Price: @offer.TotalPrice JD</p>
+    <hr />
+}
+
+<h2>Cost Summary</h2>
+
+<p>Subtotal: @ViewBag.Subtotal JD</p>
+<p>Discount Percentage: @ViewBag.DiscountPercentage%</p>
+<p>Discount Amount: @ViewBag.Discount JD</p>
+<h3>Final Total: @ViewBag.FinalTotal JD</h3>

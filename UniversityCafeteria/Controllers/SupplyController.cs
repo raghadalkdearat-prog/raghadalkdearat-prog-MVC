@@ -60,10 +60,15 @@ namespace UniversityCafeteria.Controllers
         "Daily Supplies Company"
       
     };
-
+            ViewBag.suppliers = suppliers;
 
             return View();
         }
+
+
+
+
+
 
         [HttpGet]
         public IActionResult CreateRequest()
@@ -73,6 +78,10 @@ namespace UniversityCafeteria.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+
+
+
+
         public IActionResult SubmitRequest()
         {
             string employeeName = Request.Form["employeeName"].ToString();
@@ -83,15 +92,66 @@ namespace UniversityCafeteria.Controllers
                 return View("CreateRequest");
             }
 
-            TempData["Message"] = "Request Submitted Successfully!";
-
-            return RedirectToAction("About");
+            int quantity = int.Parse(Request.Form["quantity"].ToString());
+            return RedirectToAction("CheckQuantity", new { quantity = quantity });
         }
+
+
 
 
         public IActionResult About()
         {
             return View();
         }
+
+
+
+
+
+
+
+        [HttpGet]
+        public IActionResult CheckQuantity(int quantity)
+        {
+            string result;
+
+            TempData["Message"] = "Request Submitted Successfully!";
+            if (quantity < 20)
+            {
+                result = "Small Order";
+
+
+
+            }
+            else if (quantity >= 20 && quantity <= 50)
+            {
+                result = "Medium Order";
+
+            }
+
+
+            else 
+            {
+                result = "Large Order";
+
+            }
+
+          
+            
+            TempData["result"] = result;
+
+            TempData["quantity"] = quantity;
+            return RedirectToAction("About");
+
+
+
+        }
+
+
+
+
+
+        
+
     }
 }

@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+<h1>@TempData["result"] </h1>
+<h2>Quantity: @TempData["quantity"]</h2>
+<div class="container mt-5">
+
+    <h2>About Supply Management</h2>
+
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Message"]
+        </div>
+    }
+
+    <p>University Cafeteria Supply Management System</p>
+
+</div>

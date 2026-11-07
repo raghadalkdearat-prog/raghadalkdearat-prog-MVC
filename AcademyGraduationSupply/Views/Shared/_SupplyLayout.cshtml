@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Graduation Supply Management</title>
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+
+<body>
+
+    <header class="bg-dark text-white p-3">
+        <nav class="container d-flex gap-4">
+            <a class="text-white"
+               href="@Url.Action("Index", "Supply")">
+                Create Supply Request
+            </a>
+
+            <a class="text-white"
+               href="@Url.Action("Review", "Supply")">
+                Review
+            </a>
+
+            <a class="text-white"
+               href="@Url.Action("About", "Supply")">
+                About
+            </a>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        @RenderBody()
+    </main>
+
+    <footer class="text-center mt-5 p-3 border-top">
+        Orange Coding Academy - Graduation Supply Management
+    </footer>
+
+</body>
+</html>

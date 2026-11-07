@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Review Supply Request";
+}
+
+<div class="container mt-4">
+
+    <h2>Review Supply Request</h2>
+
+    @if (ViewBag.Products != null && ViewBag.Products.Count > 0)
+    {
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Item Total</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in ViewBag.Products)
+                {
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.UnitPrice JD</td>
+                        <td>@(item.Quantity * item.UnitPrice) JD</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <h4>Request Summary</h4>
+
+        <p>Priority: @ViewBag.Priority</p>
+        <p>Subtotal: @ViewBag.Subtotal JD</p>
+        <p>Preparation Fee: @ViewBag.PreparationFee JD</p>
+        <p>Discount: @ViewBag.Discount JD</p>
+
+        <h4>Final Total: @ViewBag.FinalTotal JD</h4>
+    }
+    else
+    {
+        <div class="alert alert-warning">
+            No products added yet!
+        </div>
+    }
+
+</div>
+@if (TempData["Message"] != null)
+{
+    <p class="text-danger">@TempData["Message"]</p>
+}
+
+
+
+<form asp-controller="SupplyRequest"
+      asp-action="ConfirmRequest"
+      method="post">
+
+    <button type="submit" class="btn btn-success">
+        Confirm Request
+    </button>
+
+</form>
