@@ -1,0 +1,37 @@
+﻿@model List<Cafeteria_read_creat.Models.Product>
+
+<h2>Products</h2>
+
+<a href="/Product/Create" class="btn btn-primary">
+    Add Product
+</a>
+
+<br />
+<br />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Category ID</th>
+            <th scope="col">Supplier ID</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.Quantity</td>
+                <td>@product.CategoryId</td>
+                <td>@product.SupplierId</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,49 @@
+﻿@model List<Cafeteria_read_creat.Models.Category>
+
+<h2>Categories</h2>
+
+<a href="/Category/Create" class="btn btn-primary">
+    Add Category
+</a>
+
+<br />
+<br />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Actions</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.Id</td>
+                <td>@category.Name</td>
+                <td>@category.Description</td>
+                <td>
+                    <a href="/Category/Edit/@category.Id"
+                       class="btn btn-warning">
+                        Edit
+                    </a>
+
+                    <a href="/Category/Delete/@category.Id"
+                       class="btn btn-warning">
+                        Delete 
+                    </a>
+
+
+                    <a href="/Category/Details/@category.Id"
+                       class="btn btn-warning">
+                        Detailes
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,33 @@
+﻿@model List<Cafeteria_read_creat.Models.Supplier>
+
+<h2>Suppliers</h2>
+
+<a href="/Supplier/Create" class="btn btn-primary">
+    Add Supplier
+</a>
+
+<br />
+<br />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var supplier in Model)
+        {
+            <tr>
+                <td>@supplier.Id</td>
+                <td>@supplier.Name</td>
+                <td>@supplier.Phone</td>
+                <td>@supplier.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>

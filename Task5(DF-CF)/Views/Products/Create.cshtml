@@ -1,0 +1,33 @@
+﻿@model Task5_DF_CF_.Models.Product
+
+<h2>Create Product</h2>
+
+<form action="/Products/Create" method="post">
+    @Html.AntiForgeryToken()
+    <label>Product ID</label>
+    <input type="number" name="ProductId" required />
+    <br />
+
+    <label>Product Name</label>
+    <input type="text" name="ProductName" required />
+    <br />
+
+    <label>Product Price</label>
+    <input type="number" name="ProductPrice" step="0.01" min="0" required />
+    <br />
+
+    <label>Quantity</label>
+    <input type="number" name="Quantity" min="0" required />
+    <br />
+
+    <label>Category ID</label>
+    <input type="number" name="CategoryId" required />
+    <br />
+
+    <label>Supplier ID</label>
+    <input type="number" name="SupplierId" required />
+    <br /><br />
+
+    <button type="submit">Save Product</button>
+
+</form>

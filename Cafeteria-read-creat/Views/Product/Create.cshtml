@@ -1,0 +1,35 @@
+﻿@model Cafeteria_read_creat.Models.Product
+
+<h2>Create Product</h2>
+
+@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+<form action="/Product/Create" method="post">
+
+    @Html.AntiForgeryToken()
+
+    <label>Product Name</label>
+    <input type="text" name="Name" required />
+    <br /><br />
+
+    <label>Price</label>
+    <input type="number" name="Price"  />
+    <br /><br />
+
+    <label>Quantity</label>
+    <input type="number" name="Quantity"  />
+    <br /><br />
+
+    <label>Category ID</label>
+    <input type="number" name="CategoryId"  />
+    <br /><br />
+
+    <label>Supplier ID</label> 
+    <input type="number" name="SupplierId" />
+    <br /><br />
+
+    <button type="submit" class="btn btn-primary">
+        Save Product
+    </button>
+
+</form>
